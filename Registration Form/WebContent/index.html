@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register form</title>
+    </head>
+    <body>
+        <form method="post" action="register">
+        UserName:<input type="text" name="name" /><br/>
+       
+        Password:<input type="password" name="pass" /><br/>
+        Repeat Password:<input type="password" name="pass2" /><br/>
+        Age:<input type="number" name="age" /><br/>
+        <b> Technology Known</b>
+        <br> 
+        <input type="checkbox" id="tech1" name="tech1" value="Java">
+		<label for="tech1"> JAVA</label><br>
+		<input type="checkbox" id="tech2" name="tech1" value="Angular">
+		<label for="tech2"> Angular</label><br>
+		<input type="checkbox" id="tech3" name="tech1" value="React">
+		<label for="tech3"> React</label><br>
+		<label for="city">Choose a city:</label>
+		<select id="city" name="city">
+		  <option value="Delhi" >Delhi</option>
+		  <option value="Mumbai">Mumbai</option>
+		  <option value="Kolkata">Kolkata</option>
+		  <option value="Chennai">Chennai</option>
+	
+		 
+		</select>
+		<br>
+		<b>Gender</b>
+		<br>
+		<input type="radio" id="male" name="gender" value="male">
+		  <label for="male">Male</label><br>
+		  <input type="radio" id="female" name="gender" value="female">
+		  <label for="female">Female</label><br>
+		  <input type="radio" id="other" name="gender" value="other">
+		  <label for="other">Other</label>
+		  <br>
+		  <label for="work"><b>Work Experience(between 0 and 50):</b></label>
+  <input type="range" id="work" name="work" min="0" max="50">
+		
+        <input type="submit" value="register" />
+        </form>
+    </body>
+</html>

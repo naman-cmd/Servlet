@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+
+
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
@@ -11,11 +13,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.TrainingDao;
+import service.TrainingService;
 import bean.TrainingBean;
 /**
  * Servlet implementation class ViewDetails
  */
-@WebServlet("servlet.ViewDetails")
+@WebServlet("/ViewDetails")
 public class ViewDetails extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -36,19 +39,22 @@ public class ViewDetails extends HttpServlet {
 		PrintWriter out=response.getWriter();
 		response.setContentType("text/html");
 		
-		ArrayList<TrainingBean> list=TrainingDao.getRecords();
+		ArrayList<TrainingBean> list=TrainingService.getDetails();
 		out.print("<table><tr><th>TrainingId</th><th>TrainingName</th><th>AvailableSeat</th></tr>");
-		for(int i=0;i<list.size();i++) {
+		
 			
-			out.print("<tr>");
 			for(int j=0;j<list.size();j++) {
+				out.print("<tr>");
 				out.print("<td>"+list.get(j).getId()+"</td>");
-				out.print("<td>"+list.get(j).getId()+"</td>");
-				out.print("<td>"+list.get(j).getId()+"</td>");
+				out.print("<td>"+list.get(j).getName()+"</td>");
+				out.print("<td>"+list.get(j).getSeats()+"</td>");
+				out.print("<td><a href="+"Servlet2"+">Enroll</a></td>");
+				out.print("</tr>");
+				
 			}
-			out.print("<a href=\"\">Enroll</a>");
-			out.print("</tr>");
-		}
+			
+			
+		
 		out.print("</table>");
 	}
 
